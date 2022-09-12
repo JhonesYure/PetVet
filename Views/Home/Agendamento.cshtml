@@ -1,0 +1,62 @@
+@model Listagem
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> PetVet </title>
+        <meta charset="utf-8">
+        <meta charset="keyboards" content="html, css">
+        <meta name="description" content="petsho, banho, cachorro, gato, veterinario">
+    </head>
+    <body>
+        <header>
+            <div class="class1">
+                <a asp-controller="Home" asp-action="Index"></a><h1>PetVet</h1></a>
+            </div>
+            <div >
+                <a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+               &ensp;
+               <a asp-area="" asp-controller="Home" asp-action="Servicos">Serviços</a>
+               &ensp;
+               <a asp-area="" asp-controller="Home" asp-action="Agendamento">Agendamento</a>
+               &ensp;
+                   
+            </div>
+        </header>
+        <main>
+            <h1>Pré-Agendamento</h1>
+            <form method="post">
+                <div>
+                    <label asp-for="Nome"><b>Nome: </b></label>
+                    <input asp-for="Nome" type="text" placeholder="Insira seu nome" required>
+                </div>
+                <div>
+                    <label asp-for="Telefone"><b>Telefone: </b></label>
+                    <input asp-for="Telefone" type="text" placeholder="(00)00000-0000" maxlength="14">
+                </div>
+                <div>
+                    <label asp-for="Data"><b>Data: </b></label>
+                    <input asp-for="Data" type="date">
+                </div>
+                <div>
+                    <label asp-for="Animal"><b>Animal: </b></label>
+                    <select asp-for="Animal">
+                        <option value="Escolha">Escolha</option>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Ave">Aves</option>
+                    </select>
+                </div>
+                <div>
+                    <label asp-for="Necessidade"><b>Necessidade: </b></label>
+                    <textarea asp-for="Necessidade"></textarea>
+                
+                </div>
+                &ensp;
+                &ensp;
+                <div>
+                    <input type="submit" value="Agendar">
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

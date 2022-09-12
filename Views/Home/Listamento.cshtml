@@ -1,0 +1,33 @@
+@model List<Listagem>
+
+    <h1>Seu Agendamento foi marcado com Sucesso</h1>
+
+    <h3>Dados</h3>
+
+    
+   @foreach (Listagem a in Model)
+   {
+       <div>
+       <b>Nome: @a.Nome</b>
+        </div>
+
+        <div>
+       <b>Telefone: @a.Telefone</b>
+        </div>
+
+        <div>
+       <b>Data: @a.Data</b>
+       </div>
+
+       <div>
+       <b>Animal: @a.Animal</b>
+        </div>
+
+        <div>
+       <b>Necessidade: @a.Necessidade</b>
+         </div>
+   }
+
+    &ensp; 
+    &ensp;
+    <p><a asp-action="Index">Voltar á Página Inicial</a></p>
